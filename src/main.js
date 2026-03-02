@@ -17,3 +17,24 @@ if (menuToggle && nav) {
     link.addEventListener("click", () => nav.classList.remove("open"));
   });
 }
+
+if (window.location.hash || window.location.href.endsWith("#")) {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+    if (href === "#") {
+      event.preventDefault();
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+      return;
+    }
+    const target = document.querySelector(href);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  });
+});
