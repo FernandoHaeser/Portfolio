@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fernando Haeser - Portfólio</title>
+    <title data-i18n="head.title">Fernando Haeser - Portfólio</title>
     <meta
       name="description"
+      id="metaDescription"
       content="Portfólio simples com projetos, habilidades e contato."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,12 +27,32 @@
     <header class="site-header">
       <a class="logo" href="#top">Fernando Haeser</a>
       <nav class="nav" id="nav">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contato">Contato</a>
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <div class="lang-switch">
+        <label class="sr-only" for="languageSelect" data-i18n="header.languageLabel">Idioma</label>
+        <select
+          id="languageSelect"
+          class="lang-select"
+          aria-label="Selecionar idioma"
+          data-i18n="header.languageAria"
+          data-i18n-attr="aria-label"
+        >
+          <option value="pt-BR">PT-BR</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        data-i18n="header.menuToggle"
+        data-i18n-attr="aria-label"
+      >
         <span></span>
         <span></span>
       </button>
@@ -40,30 +61,35 @@
     <main id="top">
       <section class="hero">
         <div class="hero-content">
-          <p class="eyebrow">Engenheiro de Software</p>
-          <h1>Vivendo e aprendendo a cada dia</h1>
-          <p class="lead">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Engenheiro de Software</p>
+          <h1 data-i18n="hero.title">Vivendo e aprendendo a cada dia</h1>
+          <p class="lead" data-i18n="hero.lead">
             Aqui você encontra uma seleção dos meus projetos, habilidades e formas
             de contato.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="#projetos">Ver projetos</a>
-            <a class="btn ghost" href="#contato">Fale comigo</a>
+            <a class="btn primary" href="#projetos" data-i18n="hero.primaryCta">Ver projetos</a>
+            <a class="btn ghost" href="#contato" data-i18n="hero.secondaryCta">Fale comigo</a>
           </div>
         </div>
         <div class="hero-card">
           <div class="hero-card__header">
             <div class="hero-card__status">
               <span class="status-dot"></span>
-              <span>Freelancer disponível</span>
+              <span data-i18n="hero.status">Freelancer disponível</span>
             </div>
             <div class="hero-card__avatar">
-              <img src="/src/assets/profile.png" alt="Foto de perfil" />
+              <img
+                src="/src/assets/profile.png"
+                alt="Foto de perfil"
+                data-i18n="hero.avatarAlt"
+                data-i18n-attr="alt"
+              />
             </div>
           </div>
           <div class="hero-card__body">
             <h3>Fernando Haeser</h3>
-            <p>Front-end & Back-end Developer</p>
+            <p data-i18n="hero.role">Front-end & Back-end Developer</p>
             <div class="hero-card__chips">
               <span class="chip">
                 <span class="icon-inline" aria-hidden="true">
@@ -74,7 +100,7 @@
                     />
                   </svg>
                 </span>
-                Porto Alegre
+                <span data-i18n="hero.chipLocationShort">Porto Alegre</span>
               </span>
               <span class="chip">
                 <span class="icon-inline" aria-hidden="true">
@@ -85,7 +111,7 @@
                     />
                   </svg>
                 </span>
-                Resposta em 24h
+                <span data-i18n="hero.chipResponse">Resposta em 24h</span>
               </span>
               <span class="chip">
                 <span class="icon-inline" aria-hidden="true">
@@ -96,7 +122,7 @@
                     />
                   </svg>
                 </span>
-                Remoto + presencial
+                <span data-i18n="hero.chipAvailability">Remoto + presencial</span>
               </span>
             </div>
             <ul>
@@ -109,7 +135,7 @@
                     />
                   </svg>
                 </span>
-                Porto Alegre, Brasil
+                <span data-i18n="hero.location">Porto Alegre, Brasil</span>
               </li>
               <li>
                 <span class="icon-inline" aria-hidden="true">
@@ -136,7 +162,7 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  linkedin.com/in/fehaeser
+                  <span data-i18n="hero.linkedin">linkedin.com/in/fehaeser</span>
                 </a>
               </li>
             </ul>
@@ -146,68 +172,89 @@
 
       <section class="section" id="sobre">
         <div class="section-header">
-          <p class="eyebrow">Sobre mim</p>
-          <h2>Transformo ideias em produtos digitais com clareza e impacto.</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">Sobre mim</p>
+          <h2 data-i18n="about.title">Transformo ideias em produtos digitais com clareza e impacto.</h2>
         </div>
         <div class="grid two">
-          <p>
+          <p data-i18n="about.paragraph1">
             Sou engenheiro de software com foco em experiências modernas,
             acessíveis e bem estruturadas. Gosto de transformar requisitos em
             interfaces funcionais, priorizando performance e qualidade.
           </p>
-          <p>
+          <p data-i18n="about.paragraph2">
             Trabalho bem em times ágeis e mantenho comunicação direta. Posso
             atuar do protótipo à entrega final, garantindo consistência visual
             e código sustentável.
           </p>
         </div>
         <div class="education">
-          <h3>Formação acadêmica</h3>
+          <h3 data-i18n="about.educationTitle">Formação acadêmica</h3>
           <div class="education-item">
             <div>
-              <strong>Técnologo em Sistemas para Internet</strong>
-              <span>Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - IFRS</span>
+              <strong data-i18n="about.educationDegree">Técnologo em Sistemas para Internet</strong>
+              <span data-i18n="about.educationInstitution">
+                Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - IFRS
+              </span>
             </div>
-            <span class="education-date">2025 - 2028</span>
+            <span class="education-date" data-i18n="about.educationDate">2025 - 2028</span>
           </div>
         </div>
       </section>
 
       <section class="section" id="projetos">
         <div class="section-header">
-          <p class="eyebrow">Projetos</p>
-          <h2>Alguns trabalhos recentes</h2>
+          <p class="eyebrow" data-i18n="projects.eyebrow">Projetos</p>
+          <h2 data-i18n="projects.title">Alguns trabalhos recentes</h2>
         </div>
         <div class="grid three">
           <article class="card">
             <h3>NUV Calculator</h3>
             <p>
-              Aplicação web para cálculo de estimativa de disco para o produto NUV, da empresa:
-              <span><a href="https://www.cdn.tv.br" target="_blank" rel="noopener noreferrer">CDNTV Tecnologia</a></span>
+              <span data-i18n="projects.nuvDescription">
+                Aplicação web para cálculo de estimativa de disco para o produto NUV, da empresa:
+              </span>
+              <span>
+                <a
+                  href="https://www.cdn.tv.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="projects.nuvCompany"
+                >CDNTV Tecnologia</a>
+              </span>
             </p>
-            <a href="#" class="link">Ver detalhes →</a> <!-- Fazer hospedagem desse projeto -->
+            <a href="#" class="link" data-i18n="projects.details">Ver detalhes →</a> <!-- Fazer hospedagem desse projeto -->
           </article>
           <article class="card">
             <h3>dev-setup</h3>
-            <p>
+            <p data-i18n="projects.devSetupDescription">
                 Configuração de ambiente de desenvolvimento para projetos, funciona para: Windows, Linux e macOS.
             </p>
-            <a href="https://github.com/FernandoHaeser/dev-setup" target="_blank" class="link">Ver detalhes →</a>
+            <a
+              href="https://github.com/FernandoHaeser/dev-setup"
+              target="_blank"
+              class="link"
+              data-i18n="projects.details"
+            >Ver detalhes →</a>
           </article>
           <article class="card">
             <h3>Portfólio Criativo</h3>
-            <p>
+            <p data-i18n="projects.portfolioDescription">
               Website responsivo com transições suaves e layout flexível.
             </p>
-            <a href="https://github.com/FernandoHaeser/Portfolio" target="_blank" class="link">Ver detalhes →</a>
+            <a
+              href="https://github.com/FernandoHaeser/Portfolio"
+              target="_blank"
+              class="link"
+              data-i18n="projects.details"
+            >Ver detalhes →</a>
           </article>
         </div>
       </section>
 
       <section class="section" id="habilidades">
         <div class="section-header">
-          <p class="eyebrow">Habilidades</p>
-          <h2>Tecnologias e competências</h2>
+          <p class="eyebrow" data-i18n="skills.eyebrow">Habilidades</p>
+          <h2 data-i18n="skills.title">Tecnologias e competências</h2>
         </div>
         <div class="skills">
           <span>HTML5</span>
@@ -226,11 +273,11 @@
 
       <section class="section contact" id="contato">
         <div class="section-header">
-          <p class="eyebrow">Contato</p>
-          <h2>Vamos conversar sobre o seu próximo projeto.</h2>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contato</p>
+          <h2 data-i18n="contact.title">Vamos conversar sobre o seu próximo projeto.</h2>
         </div>
         <div class="contact-card">
-          <p>
+          <p data-i18n="contact.description">
             Me envie um e-mail ou conecte pelo LinkedIn. Respondo em até 24
             horas.
           </p>
@@ -244,7 +291,7 @@
                   />
                 </svg>
               </span>
-              Enviar e-mail
+              <span data-i18n="contact.emailCta">Enviar e-mail</span>
             </a>
             <a class="btn ghost" href="https://www.linkedin.com/in/fehaeser" target="_blank" rel="noreferrer">
               <span class="icon-inline" aria-hidden="true">
@@ -255,7 +302,7 @@
                   />
                 </svg>
               </span>
-              LinkedIn
+              <span data-i18n="contact.linkedinCta">LinkedIn</span>
             </a>
             <a class="btn ghost" href="https://github.com/FernandoHaeser" target="_blank" rel="noreferrer">
               <span class="icon-inline" aria-hidden="true">
@@ -266,7 +313,7 @@
                   />
                 </svg>
               </span>
-              GitHub
+              <span data-i18n="contact.githubCta">GitHub</span>
             </a>
           </div>
         </div>
@@ -274,10 +321,13 @@
     </main>
 
     <footer class="site-footer">
-      <span>© <span id="year"></span> Fernando Augusto Haeser. Todos os direitos reservados.</span>
+      <span class="footer-text">
+        <span data-i18n="footer.prefix">©</span> <span id="year"></span>
+        <span data-i18n="footer.suffix"> Fernando Augusto Haeser. Todos os direitos reservados.</span>
+      </span>
       <div class="footer-links">
-        <a href="#top">Topo</a>
-        <a href="#projetos">Projetos</a>
+        <a href="#top" data-i18n="footer.top">Topo</a>
+        <a href="#projetos" data-i18n="footer.projects">Projetos</a>
       </div>
     </footer>
 
