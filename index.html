@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Nome | Portfólio</title>
+    <meta
+      name="description"
+      content="Portfólio simples com projetos, habilidades e contato."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="space-bg" aria-hidden="true">
+      <div class="nebula"></div>
+      <div class="stars"></div>
+      <div class="stars stars--dense"></div>
+      <div class="glow-orb"></div>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="#top">SeuNome</a>
+      <nav class="nav" id="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Desenvolvedor Front-end</p>
+          <h1>Crio experiências digitais simples, bonitas e rápidas.</h1>
+          <p class="lead">
+            Aqui você encontra uma seleção dos meus projetos, habilidades e formas
+            de contato.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projetos">Ver projetos</a>
+            <a class="btn ghost" href="#contato">Fale comigo</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card__header">
+            <div class="hero-card__status">
+              <span class="status-dot"></span>
+              <span>Disponível para freelance</span>
+            </div>
+            <div class="hero-card__avatar">
+              <img src="/src/assets/profile.jpg" alt="Foto de perfil" />
+            </div>
+          </div>
+          <div class="hero-card__body">
+            <h3>Seu Nome</h3>
+            <p>Front-end & UI</p>
+            <ul>
+              <li>📍 São Paulo, Brasil</li>
+              <li>✉️ voce@email.com</li>
+              <li>🔗 linkedin.com/in/seunome</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="section-header">
+          <p class="eyebrow">Sobre</p>
+          <h2>Construindo produtos com foco em clareza e resultado.</h2>
+        </div>
+        <div class="grid two">
+          <p>
+            Sou um desenvolvedor focado em interfaces modernas e acessíveis.
+            Gosto de transformar ideias em produtos funcionais, sempre
+            priorizando performance e uma boa experiência para o usuário.
+          </p>
+          <p>
+            Trabalho com times ágeis e mantenho comunicação direta. Posso atuar
+            desde o protótipo até a entrega final, garantindo consistência visual
+            e qualidade do código.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="projetos">
+        <div class="section-header">
+          <p class="eyebrow">Projetos</p>
+          <h2>Alguns trabalhos recentes</h2>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>Landing Page SaaS</h3>
+            <p>
+              Página de conversão com foco em performance e copy otimizada.
+            </p>
+            <a href="#" class="link">Ver detalhes →</a>
+          </article>
+          <article class="card">
+            <h3>Dashboard Financeiro</h3>
+            <p>
+              Interface de visualização de métricas com filtros e gráficos.
+            </p>
+            <a href="#" class="link">Ver detalhes →</a>
+          </article>
+          <article class="card">
+            <h3>Portfólio Criativo</h3>
+            <p>
+              Website responsivo com transições suaves e layout flexível.
+            </p>
+            <a href="#" class="link">Ver detalhes →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="habilidades">
+        <div class="section-header">
+          <p class="eyebrow">Habilidades</p>
+          <h2>Tecnologias e competências</h2>
+        </div>
+        <div class="skills">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>React</span>
+          <span>TypeScript</span>
+          <span>UI Design</span>
+          <span>Figma</span>
+          <span>Git</span>
+        </div>
+      </section>
+
+      <section class="section contact" id="contato">
+        <div class="section-header">
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos conversar sobre o seu próximo projeto.</h2>
+        </div>
+        <div class="contact-card">
+          <p>
+            Me envie um e-mail ou conecte pelo LinkedIn. Respondo em até 24
+            horas.
+          </p>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:voce@email.com">Enviar e-mail</a>
+            <a class="btn ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Seu Nome. Todos os direitos reservados.</span>
+      <div class="footer-links">
+        <a href="#top">Topo</a>
+        <a href="#projetos">Projetos</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
