@@ -1,25 +1,43 @@
-# Portfólio simples
+# Portfolio Template
 
-Projeto base de portfólio feito com Vite + HTML/CSS/JS.
+Personal portfolio template built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Bilingual (EN/PT-BR) with smooth animations and a clean dark design.
 
-## Como rodar
+## Getting started
 
-1. Instale as dependências:
-   - `npm install`
-2. Inicie o servidor:
-   - `npm run dev`
+1. Install dependencies:
+   ```
+   npm install
+   ```
+2. Start the dev server:
+   ```
+   npm run dev
+   ```
 
-## O que ajustar
+## How to customize
 
-- Nome, título e descrição em index.html
-- Links de projetos e contato
-- Texto das seções
-- Paleta e tipografia em src/style.css
+All personal data lives in two files:
 
-### Onde subir o projeto?
+### `lib/data.ts`
+- `personalInfo` — name, email, LinkedIn, GitHub, location, CV path
+- `projects` — add/edit your projects (title, tags, category, links)
+- `experience` — work and education entries
+- `techStack` — technologies to display
 
-Para front-end: GitHub Pages, Netlify, Vercel e Cloudflare Pages (todos têm plano grátis).
-Para back-end: Render (free com sleep), Fly.io (free tier limitado), Cloudflare Workers (free), Supabase/Firebase (free para auth + DB + funções).
+### `lib/i18n.tsx`
+- Update all text strings for both `pt-BR` and `en` locales
+- Bio, job descriptions, project descriptions, contact info
 
-A maioria dos grátis tem limitações (sleep, banda, chamadas).
-Diga qual stack você usa (Node/Express, Python, Java, etc.) que eu indico o melhor
+### `components/sections/Hero.tsx`
+- Name is auto-derived from `personalInfo.name` — no changes needed after updating `data.ts`
+
+### `app/layout.tsx`
+- Update `metadata` (title, description, OpenGraph, Twitter)
+
+### `public/`
+- Replace `profile.png` with your own photo (64×64 recommended)
+- Replace `favicon.ico`
+- Add your CV as `files/YourName_CV.pdf` and update the path in `personalInfo.cv`
+
+## Deploy
+
+Works out of the box on **Vercel**, **Netlify**, and **Cloudflare Pages** (all have free tiers).

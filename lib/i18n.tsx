@@ -28,11 +28,11 @@ const dict: Record<Locale, Translations> = {
     'about.bio':
       'Sou desenvolvedor com foco em criar produtos digitais de alta qualidade. Gosto de transformar requisitos complexos em interfaces funcionais e elegantes, priorizando performance, acessibilidade e código sustentável. Trabalho bem em times ágeis, com comunicação clara do protótipo à entrega.',
     'about.work.label': 'Trabalho atual',
-    'about.work.company': 'CDNTV Tecnologia',
+    'about.work.company': 'Acme Corp',
     'about.work.role': 'Desenvolvedor Frontend',
     'about.study.label': 'Estudando',
-    'about.study.institution': 'IFRS',
-    'about.study.program': 'Técnologo em Sistemas para Internet',
+    'about.study.institution': 'Universidade Estadual',
+    'about.study.program': 'Ciência da Computação',
     'about.tech.title': 'Tecnologias',
 
     // stack
@@ -48,13 +48,13 @@ const dict: Record<Locale, Translations> = {
     'exp.num': '02.',
     'exp.section': 'Experiência',
     'exp.present': 'Atualidade',
-    'exp.cdntv.role': 'Desenvolvedor Frontend',
-    'exp.cdntv.desc':
-      'Desenvolvi a aplicação **NUV Calculator** para estimativa de uso de disco do produto NUV, utilizando **JavaScript**, **HTML5** e **CSS3** puros. Trabalhei em estreita colaboração com a equipe de produto na definição de requisitos, entregando uma interface precisa, responsiva e acessível.',
-    'exp.ifrs.role': 'Técnologo em Sistemas para Internet',
-    'exp.ifrs.end': '2028 (previsto)',
-    'exp.ifrs.desc':
-      'Cursando Tecnologia em **Sistemas para Internet** com ênfase em desenvolvimento web **full-stack**, **banco de dados** relacional e não-relacional, arquitetura de software, **redes de computadores** e engenharia de software ágil.',
+    'exp.acme.role': 'Desenvolvedor Frontend',
+    'exp.acme.desc':
+      'Desenvolvo interfaces modernas e acessíveis com foco em performance e experiência do usuário. Colaboro com times multidisciplinares na definição de requisitos, entregando soluções responsivas e bem estruturadas.',
+    'exp.university.role': 'Ciência da Computação',
+    'exp.university.end': '2023 (concluído)',
+    'exp.university.desc':
+      'Graduação em **Ciência da Computação** com ênfase em desenvolvimento de software, **estruturas de dados**, algoritmos, arquitetura de sistemas e engenharia de software.',
 
     // projects — 03.
     'projects.num': '03.',
@@ -62,23 +62,26 @@ const dict: Record<Locale, Translations> = {
     'projects.view': 'Ver Projeto',
     'projects.repo': 'Ver Repositório',
     'projects.all': 'Ver todos os projetos no GitHub →',
-    'projects.nuv.description':
-      'Aplicação web para cálculo de estimativa de uso de disco para o produto NUV da CDNTV Tecnologia. Foco em precisão e usabilidade.',
-    'projects.devsetup.description':
-      'Script de configuração de ambiente de desenvolvimento com suporte a Windows, Linux e macOS. Automatiza instalação de ferramentas e configurações.',
+    'projects.ecommerce.description':
+      'Plataforma de e-commerce completa com carrinho de compras, pagamentos via Stripe e painel administrativo. Foco em performance e experiência do usuário.',
+    'projects.taskapi.description':
+      'API REST para gerenciamento de tarefas com autenticação JWT, filtros avançados e documentação OpenAPI.',
     'projects.portfolio.description':
-      'Portfólio pessoal com design inspirado em referências modernas, animações suaves e suporte bilíngue PT-BR/EN. Construído com Next.js e Framer Motion.',
+      'Portfólio pessoal com design moderno, animações suaves e suporte bilíngue PT-BR/EN. Construído com Next.js e Framer Motion.',
 
     // contact
+    'contact.eyebrow': 'Contato',
     'contact.title': 'Vamos construir algo juntos?',
-    'contact.pitch':
+    'contact.description':
       'Estou aberto a projetos freelance, colaborações e oportunidades full-time. Respondo em até 24 horas.',
-    'contact.email': 'fernandohaeserr@gmail.com',
+    'contact.email': 'alex@example.com',
+    'contact.linkedin': 'LinkedIn',
+    'contact.github': 'GitHub',
     'contact.cta.email': 'Enviar e-mail',
     'contact.cta.cv': 'Download CV',
 
     // footer
-    'footer.rights': '© 2025 Fernando Haeser. Todos os direitos reservados.',
+    'footer.rights': '© 2025 Alex Johnson. Todos os direitos reservados.',
     'footer.built': 'Desenvolvido com Next.js + Tailwind CSS',
   },
 
@@ -103,11 +106,11 @@ const dict: Record<Locale, Translations> = {
     'about.bio':
       'I am a developer focused on building high-quality digital products. I enjoy turning complex requirements into functional and elegant interfaces, prioritizing performance, accessibility, and sustainable code. I work well in agile teams with clear communication, from prototype to final delivery.',
     'about.work.label': 'Current work',
-    'about.work.company': 'CDNTV Tecnologia',
-    'about.work.role': 'Junior Developer',
-    'about.study.label': 'Currently studying',
-    'about.study.institution': 'IFRS',
-    'about.study.program': 'Internet Systems Technology',
+    'about.work.company': 'Acme Corp',
+    'about.work.role': 'Frontend Developer',
+    'about.study.label': 'Education',
+    'about.study.institution': 'State University',
+    'about.study.program': 'Computer Science',
     'about.tech.title': 'Technologies',
 
     // stack
@@ -123,13 +126,13 @@ const dict: Record<Locale, Translations> = {
     'exp.num': '02.',
     'exp.section': 'Experience',
     'exp.present': 'Present',
-    'exp.cdntv.role': 'Junior Developer',
-    'exp.cdntv.desc':
-      'Developed the **NUV Calculator** application for disk usage estimation of the NUV product, using pure **JavaScript**, **HTML5**, and **CSS3**. Worked closely with the product team to define requirements, delivering a precise, responsive, and accessible interface.',
-    'exp.ifrs.role': 'Internet Systems Technology',
-    'exp.ifrs.end': '2028 (expected)',
-    'exp.ifrs.desc':
-      'Studying **Internet Systems Technology** with emphasis on full-stack **web development**, relational and non-relational **databases**, software architecture, **computer networking**, and agile software engineering.',
+    'exp.acme.role': 'Frontend Developer',
+    'exp.acme.desc':
+      'Building modern, accessible interfaces with a focus on performance and user experience. Collaborating with cross-functional teams to define requirements and deliver responsive, well-structured solutions.',
+    'exp.university.role': 'Computer Science',
+    'exp.university.end': '2023 (completed)',
+    'exp.university.desc':
+      'Bachelor\'s degree in **Computer Science** with emphasis on software development, **data structures**, algorithms, system architecture, and software engineering.',
 
     // projects
     'projects.num': '03.',
@@ -137,23 +140,26 @@ const dict: Record<Locale, Translations> = {
     'projects.view': 'View Project',
     'projects.repo': 'View Repository',
     'projects.all': 'View all projects on GitHub →',
-    'projects.nuv.description':
-      'Web app for disk usage estimation for the NUV product at CDNTV Tecnologia. Focused on precision and usability.',
-    'projects.devsetup.description':
-      'Development environment setup script supporting Windows, Linux, and macOS. Automates tool installation and configuration.',
+    'projects.ecommerce.description':
+      'Full-featured e-commerce platform with shopping cart, Stripe payments, and admin dashboard. Focused on performance and user experience.',
+    'projects.taskapi.description':
+      'REST API for task management with JWT authentication, advanced filters, and OpenAPI documentation.',
     'projects.portfolio.description':
       'Personal portfolio with a modern design, smooth animations, and bilingual PT-BR/EN support. Built with Next.js and Framer Motion.',
 
     // contact
+    'contact.eyebrow': 'Contact',
     'contact.title': "Let's build something together?",
-    'contact.pitch':
+    'contact.description':
       "I'm open to freelance projects, collaborations, and full-time opportunities. I reply within 24 hours.",
-    'contact.email': 'fernandohaeserr@gmail.com',
+    'contact.email': 'alex@example.com',
+    'contact.linkedin': 'LinkedIn',
+    'contact.github': 'GitHub',
     'contact.cta.email': 'Send email',
     'contact.cta.cv': 'Download CV',
 
     // footer
-    'footer.rights': '© 2025 Fernando Haeser. All rights reserved.',
+    'footer.rights': '© 2025 Alex Johnson. All rights reserved.',
     'footer.built': 'Built with Next.js + Tailwind CSS',
   },
 }
