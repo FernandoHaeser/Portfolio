@@ -5,10 +5,13 @@ Personal portfolio template built with Next.js, TypeScript, Tailwind CSS, and Fr
 ## Getting started
 
 1. Install dependencies:
+
    ```
    npm install
    ```
+
 2. Start the dev server:
+
    ```
    npm run dev
    ```
