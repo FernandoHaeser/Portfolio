@@ -48,15 +48,15 @@ export function Hero() {
           {/* Name */}
           <motion.h1
             variants={item}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary leading-[1.05] mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
           >
             Fernando
             <br />
-            Haeser
+            <span className="text-primary">Haeser</span>
           </motion.h1>
 
           {/* Tagline */}
-          <motion.p variants={item} className="text-muted text-lg leading-relaxed mb-10 max-w-lg">
+          <motion.p variants={item} className="text-muted-light text-lg leading-relaxed mb-10 max-w-lg">
             {t('hero.tagline')}
           </motion.p>
 

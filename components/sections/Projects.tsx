@@ -14,7 +14,7 @@ const fadeUp = {
 
 function ProjectPlaceholder({ category }: { category: string }) {
   return (
-    <div className="aspect-video bg-bg flex items-center justify-center border-b border-line">
+    <div className="aspect-video bg-surface flex items-center justify-center border-b border-line">
       <span className="font-mono text-xs text-line uppercase tracking-widest">{category}</span>
     </div>
   )
@@ -51,7 +51,7 @@ export function Projects() {
             <motion.article
               key={project.id}
               variants={fadeUp}
-              className="bg-surface border border-line rounded-xl overflow-hidden group hover:border-primary/30 transition-all duration-300 flex flex-col"
+              className="bg-carbon border border-line rounded-xl overflow-hidden group hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
               {/* Image / placeholder */}
               <div className="relative overflow-hidden">
@@ -76,7 +76,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs font-mono px-2 py-0.5 rounded bg-bg border border-line text-muted"
+                      className="text-xs font-mono px-2 py-0.5 rounded bg-surface border border-line text-muted-light"
                     >
                       {tag}
                     </span>
@@ -89,7 +89,7 @@ export function Projects() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-muted text-sm leading-relaxed flex-1 mb-5">
+                <p className="text-muted-light text-sm leading-relaxed flex-1 mb-5">
                   {t(project.descriptionKey)}
                 </p>
 

@@ -19,22 +19,22 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fernando Haeser — Fullstack Developer',
+  title: 'Fernando Haeser — Sofware Engineer',
   description:
-    'Fullstack Developer passionate about building modern, accessible, and well-structured digital experiences. Based in Porto Alegre, Brazil.',
+    'Developer passionate about building modern, accessible, and well-structured digital experiences. Based in Porto Alegre, Brazil.',
   authors: [{ name: 'Fernando Haeser' }],
-  keywords: ['fullstack developer', 'software engineer', 'react', 'next.js', 'typescript', 'porto alegre'],
+  keywords: ['developer', 'software engineer', 'react', 'next.js', 'typescript', 'porto alegre'],
   themeColor: '#FF8A1F',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Fernando Haeser — Fullstack Developer',
+    title: 'Fernando Haeser — Software Engineer',
     description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
     siteName: 'Fernando Haeser',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fernando Haeser — Fullstack Developer',
+    title: 'Fernando Haeser — Software Engineer',
     description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
   },
   robots: { index: true, follow: true },

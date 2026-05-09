@@ -39,7 +39,7 @@ export function About() {
             initial="hidden"
             animate={inView ? 'show' : 'hidden'}
             transition={{ delay: 0.1 }}
-            className="text-muted text-base leading-relaxed"
+            className="text-muted-light text-base leading-relaxed"
           >
             {t('about.bio')}
           </motion.p>
@@ -54,7 +54,7 @@ export function About() {
             {/* Work card */}
             <motion.div
               variants={fadeUp}
-              className="bg-surface border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
+              className="bg-carbon border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
             >
               <div className="flex items-center gap-2 mb-2">
                 <Briefcase size={14} className="text-primary" />
@@ -69,7 +69,7 @@ export function About() {
             {/* Study card */}
             <motion.div
               variants={fadeUp}
-              className="bg-surface border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
+              className="bg-carbon border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
             >
               <div className="flex items-center gap-2 mb-2">
                 <GraduationCap size={14} className="text-primary" />
@@ -97,7 +97,7 @@ export function About() {
             {techStack.map((tech) => (
               <span
                 key={tech.name}
-                className="px-3 py-1.5 text-sm text-muted bg-surface border border-line rounded-md hover:text-white hover:border-primary/40 transition-all duration-200 cursor-default"
+                className="px-3 py-1.5 text-sm text-muted-light bg-surface border border-line rounded-md hover:text-white hover:border-primary/40 transition-all duration-200 cursor-default"
               >
                 {tech.name}
               </span>

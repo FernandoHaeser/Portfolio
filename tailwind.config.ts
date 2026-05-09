@@ -10,12 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0E0E10',
-        surface: '#16161A',
-        line: '#262629',
+        bg: '#111114',
+        surface: '#1B1B1F',
+        carbon: '#232328',
+        line: '#2E2E34',
         primary: '#FF8A1F',
         'primary-hover': '#FFB060',
-        muted: '#9A9AA2',
+        accent: '#FF8A1F',
+        muted: '#8C8C98',
+        'muted-light': '#ADADB8',
       },
       fontFamily: {
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],

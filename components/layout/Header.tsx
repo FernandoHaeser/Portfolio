@@ -64,7 +64,6 @@ export function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-        {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="font-mono font-bold text-white text-sm hover:text-primary transition-colors duration-200"
@@ -89,7 +88,7 @@ export function Header() {
                 {isActive && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-surface border border-line rounded-md"
+                    className="absolute inset-0 bg-carbon border border-line rounded-md"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}

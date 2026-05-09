@@ -17,7 +17,7 @@ const dict: Record<Locale, Translations> = {
     // hero
     'hero.greeting': 'Olá 👋 meu nome é',
     'hero.tagline':
-      'Desenvolvedor Fullstack apaixonado por construir experiências digitais modernas, acessíveis e bem estruturadas.',
+      'Desenvolvedor apaixonado por construir experiências digitais modernas, acessíveis e bem estruturadas.',
     'hero.cta.email': 'Entrar em contato',
     'hero.cta.linkedin': 'LinkedIn',
     'hero.cta.github': 'GitHub',
@@ -26,7 +26,7 @@ const dict: Record<Locale, Translations> = {
     'about.num': '01.',
     'about.section': 'Sobre',
     'about.bio':
-      'Sou desenvolvedor fullstack com foco em criar produtos digitais de alta qualidade. Gosto de transformar requisitos complexos em interfaces funcionais e elegantes, priorizando performance, acessibilidade e código sustentável. Trabalho bem em times ágeis, com comunicação clara do protótipo à entrega.',
+      'Sou desenvolvedor com foco em criar produtos digitais de alta qualidade. Gosto de transformar requisitos complexos em interfaces funcionais e elegantes, priorizando performance, acessibilidade e código sustentável. Trabalho bem em times ágeis, com comunicação clara do protótipo à entrega.',
     'about.work.label': 'Trabalho atual',
     'about.work.company': 'CDNTV Tecnologia',
     'about.work.role': 'Desenvolvedor Frontend',
@@ -92,7 +92,7 @@ const dict: Record<Locale, Translations> = {
     // hero
     'hero.greeting': 'Hello 👋 my name is',
     'hero.tagline':
-      'Fullstack Developer passionate about building modern, accessible, and well-structured digital experiences.',
+      'Developer passionate about building modern, accessible, and well-structured digital experiences.',
     'hero.cta.email': 'Get in touch',
     'hero.cta.linkedin': 'LinkedIn',
     'hero.cta.github': 'GitHub',
@@ -101,10 +101,10 @@ const dict: Record<Locale, Translations> = {
     'about.num': '01.',
     'about.section': 'About',
     'about.bio':
-      'I am a fullstack developer focused on building high-quality digital products. I enjoy turning complex requirements into functional and elegant interfaces, prioritizing performance, accessibility, and sustainable code. I work well in agile teams with clear communication, from prototype to final delivery.',
+      'I am a developer focused on building high-quality digital products. I enjoy turning complex requirements into functional and elegant interfaces, prioritizing performance, accessibility, and sustainable code. I work well in agile teams with clear communication, from prototype to final delivery.',
     'about.work.label': 'Current work',
     'about.work.company': 'CDNTV Tecnologia',
-    'about.work.role': 'Frontend Developer',
+    'about.work.role': 'Junior Developer',
     'about.study.label': 'Currently studying',
     'about.study.institution': 'IFRS',
     'about.study.program': 'Internet Systems Technology',
@@ -123,7 +123,7 @@ const dict: Record<Locale, Translations> = {
     'exp.num': '02.',
     'exp.section': 'Experience',
     'exp.present': 'Present',
-    'exp.cdntv.role': 'Frontend Developer',
+    'exp.cdntv.role': 'Junior Developer',
     'exp.cdntv.desc':
       'Developed the **NUV Calculator** application for disk usage estimation of the NUV product, using pure **JavaScript**, **HTML5**, and **CSS3**. Worked closely with the product team to define requirements, delivering a precise, responsive, and accessible interface.',
     'exp.ifrs.role': 'Internet Systems Technology',

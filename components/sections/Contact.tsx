@@ -70,7 +70,7 @@ export function Contact() {
           <h2 className="font-mono font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
             {t('contact.title')}
           </h2>
-          <p className="text-muted text-base max-w-lg mx-auto">
+          <p className="text-muted-light text-base max-w-lg mx-auto">
             {t('contact.description')}
           </p>
         </motion.div>

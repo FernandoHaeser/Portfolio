@@ -80,7 +80,7 @@ export function Experience() {
                 <p className="text-primary text-sm mb-3">{t(entry.roleKey)}</p>
 
                 {/* Description with bold highlights */}
-                <p className="text-muted text-sm leading-relaxed max-w-2xl">
+                <p className="text-muted-light text-sm leading-relaxed max-w-2xl">
                   <RichText text={t(entry.descKey)} />
                 </p>
               </motion.div>
