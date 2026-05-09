@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-mono: 'JetBrains Mono';
+  --font-sans: 'Inter';
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #111114;
+  color: #F0F0F2;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: rgba(255, 138, 31, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #111114;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 138, 31, 0.4);
+  border-radius: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid #ff8a1f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.7;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+.glass {
+  background: rgba(27, 27, 31, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(46, 46, 52, 0.7);
+}
+
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 30px rgba(255, 138, 31, 0.08), 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
