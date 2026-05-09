@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { useI18n } from '@/lib/i18n'
-import { techStack } from '@/lib/data'
+import { techStackCategories } from '@/lib/data'
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },
@@ -23,7 +23,7 @@ export function TechStack() {
     <section id="stack" ref={ref} className="relative py-24 px-6">
       {/* Subtle background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-96 h-96 rounded-full bg-primary/10 blur-[100px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute w-64 h-64 rounded-full bg-primary/8 blur-[60px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
       </div>
 
       <div className="relative max-w-5xl mx-auto">
@@ -44,9 +44,9 @@ export function TechStack() {
 
         {/* Categories grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {techStack.map((category, catIdx) => (
+          {techStackCategories.map((category, catIdx) => (
             <motion.div
-              key={category.labelKey}
+              key={category.key}
               variants={fadeUp(catIdx * 0.08)}
               initial="hidden"
               animate={inView ? 'show' : 'hidden'}
@@ -60,7 +60,7 @@ export function TechStack() {
 
               <div className="relative z-10">
                 <div className="flex items-center gap-2.5 mb-4">
-                  <span className="text-xl">{category.emoji}</span>
+                  <span className="text-xl">{category.icon}</span>
                   <h3 className="font-mono font-semibold text-white text-sm">
                     {t(category.labelKey)}
                   </h3>

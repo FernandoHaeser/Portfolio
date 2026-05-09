@@ -19,21 +19,23 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fernando Haeser — Software Engineer',
+  title: 'Fernando Haeser — Fullstack Developer',
   description:
-    'Software Engineer focused on modern, accessible, and well-structured digital experiences. Front-end & Back-end Developer based in Porto Alegre, Brazil.',
+    'Fullstack Developer passionate about building modern, accessible, and well-structured digital experiences. Based in Porto Alegre, Brazil.',
   authors: [{ name: 'Fernando Haeser' }],
-  keywords: ['software engineer', 'developer', 'react', 'next.js', 'typescript', 'porto alegre'],
+  keywords: ['fullstack developer', 'software engineer', 'react', 'next.js', 'typescript', 'porto alegre'],
+  themeColor: '#FF8A1F',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    title: 'Fernando Haeser — Software Engineer',
+    title: 'Fernando Haeser — Fullstack Developer',
     description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
-    siteName: 'Fernando Haeser Portfolio',
+    siteName: 'Fernando Haeser',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fernando Haeser — Software Engineer',
+    title: 'Fernando Haeser — Fullstack Developer',
+    description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
   },
   robots: { index: true, follow: true },
 }
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${jetbrainsMono.variable} ${inter.variable} dark`}>
-      <body className={`${jetbrainsMono.className} noise`}>
+      <body className={inter.className}>
         <I18nProvider>
           <SmoothScroll>
             <ScrollProgress />

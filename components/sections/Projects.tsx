@@ -1,170 +1,145 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { Github, ExternalLink } from 'lucide-react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
 import { useI18n } from '@/lib/i18n'
-import { projects, type ProjectCategory } from '@/lib/data'
+import { projects, personalInfo } from '@/lib/data'
 
-const categories: { key: string; value: ProjectCategory }[] = [
-  { key: 'projects.filter.all', value: 'all' },
-  { key: 'projects.filter.frontend', value: 'frontend' },
-  { key: 'projects.filter.backend', value: 'backend' },
-  { key: 'projects.filter.devops', value: 'devops' },
-  { key: 'projects.filter.fullstack', value: 'fullstack' },
-]
-
-const categoryColors: Record<string, string> = {
-  frontend: 'rgba(251,146,60,0.15)',
-  backend: 'rgba(249,115,22,0.15)',
-  devops: 'rgba(251,191,36,0.15)',
-  fullstack: 'rgba(234,88,12,0.15)',
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
-  },
-})
+function ProjectPlaceholder({ category }: { category: string }) {
+  return (
+    <div className="aspect-video bg-bg flex items-center justify-center border-b border-line">
+      <span className="font-mono text-xs text-line uppercase tracking-widest">{category}</span>
+    </div>
+  )
+}
 
 export function Projects() {
   const { t } = useI18n()
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.1 })
-  const [active, setActive] = useState<ProjectCategory>('all')
-
-  const filtered = active === 'all' ? projects : projects.filter((p) => p.category === active)
+  const inView = useInView(ref, { once: true, amount: 0.08 })
 
   return (
-    <section id="projects" ref={ref} className="relative py-24 px-6">
+    <section id="projects" ref={ref} className="py-24 px-6 border-t border-line">
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
+        {/* Section label */}
         <motion.div
-          variants={fadeUp(0)}
+          variants={fadeUp}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="mb-10"
+          className="mb-14"
         >
-          <p className="text-accent text-xs font-mono font-semibold tracking-[0.22em] uppercase mb-3">
-            {t('projects.eyebrow')}
-          </p>
-          <h2 className="font-mono font-bold text-3xl sm:text-4xl text-white">
-            {t('projects.title')}
-          </h2>
+          <p className="font-mono text-primary text-sm font-medium mb-1">{t('projects.num')}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">{t('projects.section')}</h2>
+          <div className="mt-3 w-10 h-px bg-primary/50" />
         </motion.div>
 
-        {/* Filter tabs */}
+        {/* Cards grid */}
         <motion.div
-          variants={fadeUp(0.1)}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="flex flex-wrap gap-2 mb-10"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10"
         >
-          {categories.map(({ key, value }) => (
-            <button
-              key={value}
-              onClick={() => setActive(value)}
-              className={`relative px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all duration-300 ${
-                active === value
-                  ? 'text-white'
-                  : 'text-muted hover:text-white glass'
-              }`}
+          {projects.map((project) => (
+            <motion.article
+              key={project.id}
+              variants={fadeUp}
+              className="bg-surface border border-line rounded-xl overflow-hidden group hover:border-primary/30 transition-all duration-300 flex flex-col"
             >
-              {active === value && (
-                <motion.span
-                  layoutId="filter-pill"
-                  className="absolute inset-0 rounded-xl"
-                  style={{ background: 'linear-gradient(135deg, #f97316, #fb923c)' }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                />
-              )}
-              <span className="relative z-10">{t(key)}</span>
-            </button>
+              {/* Image / placeholder */}
+              <div className="relative overflow-hidden">
+                {project.image ? (
+                  <div className="aspect-video relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : (
+                  <ProjectPlaceholder category={project.category} />
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="p-5 flex flex-col flex-1">
+                {/* Tech pills */}
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono px-2 py-0.5 rounded bg-bg border border-line text-muted"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-white font-semibold text-base mb-1.5 group-hover:text-primary transition-colors duration-200">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-muted text-sm leading-relaxed flex-1 mb-5">
+                  {t(project.descriptionKey)}
+                </p>
+
+                {/* Links */}
+                <div className="flex gap-4 mt-auto">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary-hover transition-colors duration-200"
+                    >
+                      <ExternalLink size={12} />
+                      {t('projects.view')}
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-white transition-colors duration-200"
+                    >
+                      <Github size={12} />
+                      {t('projects.repo')}
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.article>
           ))}
         </motion.div>
 
-        {/* Project cards */}
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={active}
-            layout
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        {/* View all link */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? 'show' : 'hidden'}
+          transition={{ delay: 0.3 }}
+        >
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-primary transition-colors duration-200"
           >
-            {filtered.map((project, idx) => (
-              <motion.article
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: idx * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className="relative glass rounded-2xl p-6 group glow-hover border border-white/8 hover:border-primary/30 transition-all duration-300 flex flex-col"
-              >
-                {/* Category glow */}
-                <div
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: categoryColors[project.category] ?? 'transparent' }}
-                />
-
-                <div className="relative z-10 flex flex-col flex-1">
-                  {/* Category badge */}
-                  <span className="text-xs font-mono px-2.5 py-0.5 rounded-full self-start mb-4 text-accent/80 bg-accent/8 border border-accent/15">
-                    {project.category}
-                  </span>
-
-                  <h3 className="font-mono font-bold text-lg text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-muted text-sm font-mono leading-relaxed mb-4 flex-1">
-                    {t(project.descriptionKey)}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-mono px-2 py-0.5 rounded-md text-white/60 bg-white/5 border border-white/8"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex gap-2 mt-auto">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-mono font-semibold px-3 py-1.5 rounded-lg glass text-muted hover:text-white hover:border-white/20 transition-all duration-200"
-                      >
-                        <Github size={13} />
-                        {t('projects.github')}
-                      </a>
-                    )}
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-mono font-semibold px-3 py-1.5 rounded-lg bg-primary/20 text-accent hover:bg-primary/30 border border-primary/30 transition-all duration-200"
-                      >
-                        <ExternalLink size={13} />
-                        {t('projects.demo')}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+            {t('projects.all')}
+            <ArrowUpRight size={14} />
+          </a>
+        </motion.div>
       </div>
     </section>
   )

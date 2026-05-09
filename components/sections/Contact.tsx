@@ -54,7 +54,7 @@ export function Contact() {
     <section id="contact" ref={ref} className="relative py-24 px-6">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-[600px] h-[600px] rounded-full bg-primary/15 blur-[120px] -bottom-1/2 left-1/2 -translate-x-1/2" />
+        <div className="absolute w-[360px] h-[360px] rounded-full bg-primary/10 blur-[70px] -bottom-1/2 left-1/2 -translate-x-1/2" />
       </div>
 
       <div className="relative max-w-4xl mx-auto">
@@ -70,7 +70,7 @@ export function Contact() {
           <h2 className="font-mono font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
             {t('contact.title')}
           </h2>
-          <p className="text-muted font-mono text-base max-w-lg mx-auto">
+          <p className="text-muted text-base max-w-lg mx-auto">
             {t('contact.description')}
           </p>
         </motion.div>

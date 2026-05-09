@@ -2,119 +2,106 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { GraduationCap, Code2, Briefcase, Globe } from 'lucide-react'
+import { Briefcase, GraduationCap } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
+import { techStack } from '@/lib/data'
 
-const fadeUp = (delay = 0) => ({
-  hidden: { opacity: 0, y: 40 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
-  },
-})
-
-const stats = [
-  { icon: Code2, valueKey: '8+', labelKey: 'about.stat.languages', color: '#f97316' },
-  { icon: Briefcase, valueKey: '3+', labelKey: 'about.stat.projects', color: '#fb923c' },
-  { icon: Globe, valueKey: '100%', labelKey: 'about.stat.availability', color: '#fbbf24' },
-]
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+}
 
 export function About() {
   const { t } = useI18n()
   const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, amount: 0.2 })
+  const inView = useInView(ref, { once: true, amount: 0.15 })
 
   return (
-    <section id="about" ref={ref} className="relative py-24 px-6">
+    <section id="about" ref={ref} className="py-24 px-6 border-t border-line">
       <div className="max-w-5xl mx-auto">
-        {/* Header */}
+        {/* Section label */}
         <motion.div
-          variants={fadeUp(0)}
+          variants={fadeUp}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="mb-12"
+          className="mb-14"
         >
-          <p className="text-accent text-xs font-mono font-semibold tracking-[0.22em] uppercase mb-3">
-            {t('about.eyebrow')}
-          </p>
-          <h2 className="font-mono font-bold text-3xl sm:text-4xl text-white max-w-2xl leading-tight">
-            {t('about.title')}
-          </h2>
+          <p className="font-mono text-primary text-sm font-medium mb-1">{t('about.num')}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">{t('about.section')}</h2>
+          <div className="mt-3 w-10 h-px bg-primary/50" />
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.1 } },
-          }}
-          initial="hidden"
-          animate={inView ? 'show' : 'hidden'}
-          className="grid grid-cols-3 gap-4 mb-12"
-        >
-          {stats.map(({ icon: Icon, valueKey, labelKey, color }) => (
+        {/* Bio + cards grid */}
+        <div className="grid md:grid-cols-[1fr_280px] gap-10 mb-14">
+          {/* Bio */}
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? 'show' : 'hidden'}
+            transition={{ delay: 0.1 }}
+            className="text-muted text-base leading-relaxed"
+          >
+            {t('about.bio')}
+          </motion.p>
+
+          {/* Cards */}
+          <motion.div
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+            initial="hidden"
+            animate={inView ? 'show' : 'hidden'}
+            className="flex flex-col gap-3"
+          >
+            {/* Work card */}
             <motion.div
-              key={labelKey}
-              variants={fadeUp(0.1)}
-              className="glass rounded-xl p-5 glow-hover text-center group"
+              variants={fadeUp}
+              className="bg-surface border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
             >
-              <Icon
-                size={22}
-                className="mb-2 mx-auto transition-transform duration-300 group-hover:scale-110"
-                style={{ color }}
-              />
-              <p className="font-mono font-bold text-2xl text-white mb-0.5">{valueKey}</p>
-              <p className="text-muted text-xs font-mono">{t(labelKey)}</p>
+              <div className="flex items-center gap-2 mb-2">
+                <Briefcase size={14} className="text-primary" />
+                <p className="text-muted text-xs font-mono uppercase tracking-widest">
+                  {t('about.work.label')}
+                </p>
+              </div>
+              <p className="text-white font-semibold text-sm">{t('about.work.company')}</p>
+              <p className="text-muted text-xs mt-0.5">{t('about.work.role')}</p>
             </motion.div>
-          ))}
-        </motion.div>
 
-        {/* Text grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
-          <motion.p
-            variants={fadeUp(0.2)}
-            initial="hidden"
-            animate={inView ? 'show' : 'hidden'}
-            className="text-muted leading-relaxed font-mono text-sm"
-          >
-            {t('about.p1')}
-          </motion.p>
-          <motion.p
-            variants={fadeUp(0.3)}
-            initial="hidden"
-            animate={inView ? 'show' : 'hidden'}
-            className="text-muted leading-relaxed font-mono text-sm"
-          >
-            {t('about.p2')}
-          </motion.p>
+            {/* Study card */}
+            <motion.div
+              variants={fadeUp}
+              className="bg-surface border border-line rounded-xl p-4 hover:border-primary/30 transition-colors duration-300"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <GraduationCap size={14} className="text-primary" />
+                <p className="text-muted text-xs font-mono uppercase tracking-widest">
+                  {t('about.study.label')}
+                </p>
+              </div>
+              <p className="text-white font-semibold text-sm">{t('about.study.institution')}</p>
+              <p className="text-muted text-xs mt-0.5">{t('about.study.program')}</p>
+            </motion.div>
+          </motion.div>
         </div>
 
-        {/* Education card */}
+        {/* Tech stack */}
         <motion.div
-          variants={fadeUp(0.4)}
+          variants={fadeUp}
           initial="hidden"
           animate={inView ? 'show' : 'hidden'}
-          className="glass rounded-xl p-6 glow-hover border border-white/8 hover:border-primary/30 transition-all duration-300"
+          transition={{ delay: 0.2 }}
         >
-          <div className="flex items-start gap-4">
-            <div className="p-2.5 rounded-lg bg-primary/20 mt-0.5">
-              <GraduationCap size={20} className="text-primary" />
-            </div>
-            <div>
-              <p className="text-xs font-mono text-muted uppercase tracking-widest mb-1">
-                {t('about.education.title')}
-              </p>
-              <h3 className="font-mono font-bold text-white text-base mb-1">
-                {t('about.education.degree')}
-              </h3>
-              <p className="text-muted text-sm font-mono mb-1">
-                {t('about.education.institution')}
-              </p>
-              <span className="text-accent text-xs font-mono font-semibold">
-                {t('about.education.period')}
+          <p className="text-xs font-mono text-muted uppercase tracking-widest mb-5">
+            {t('about.tech.title')}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech.name}
+                className="px-3 py-1.5 text-sm text-muted bg-surface border border-line rounded-md hover:text-white hover:border-primary/40 transition-all duration-200 cursor-default"
+              >
+                {tech.name}
               </span>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>

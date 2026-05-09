@@ -2,169 +2,159 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 
-export type Locale = 'pt-BR' | 'en' | 'es'
+export type Locale = 'pt-BR' | 'en'
 
 type Translations = Record<string, string>
 
 const dict: Record<Locale, Translations> = {
   'pt-BR': {
+    // nav
     'nav.about': 'Sobre',
-    'nav.stack': 'Stack',
+    'nav.experience': 'Experiência',
     'nav.projects': 'Projetos',
     'nav.contact': 'Contato',
-    'nav.lang': 'Idioma',
-    'hero.eyebrow': 'Engenheiro de Software',
-    'hero.title': 'Fernando Haeser',
-    'hero.subtitle': 'Front-end & Back-end Developer',
-    'hero.lead': 'Construindo experiências digitais modernas com performance, criatividade e arquitetura limpa.',
-    'hero.cta.projects': 'Ver Projetos',
-    'hero.cta.contact': 'Contato',
-    'hero.status': 'Disponível para freelance',
-    'hero.location': 'Porto Alegre, Brasil',
-    'about.eyebrow': 'Sobre mim',
-    'about.title': 'Transformo ideias em produtos digitais com clareza e impacto.',
-    'about.p1': 'Sou engenheiro de software com foco em experiências modernas, acessíveis e bem estruturadas. Gosto de transformar requisitos em interfaces funcionais, priorizando performance e qualidade.',
-    'about.p2': 'Trabalho bem em times ágeis e mantenho comunicação direta. Posso atuar do protótipo à entrega final, garantindo consistência visual e código sustentável.',
-    'about.stat.languages': 'Linguagens',
-    'about.stat.projects': 'Projetos',
-    'about.stat.availability': 'Remoto',
-    'about.education.title': 'Formação acadêmica',
-    'about.education.degree': 'Técnologo em Sistemas para Internet',
-    'about.education.institution': 'IFRS — Instituto Federal do Rio Grande do Sul',
-    'about.education.period': '2025 – 2028',
-    'stack.eyebrow': 'Tecnologias',
-    'stack.title': 'Minha stack de desenvolvimento',
-    'stack.frontend': 'Frontend',
-    'stack.backend': 'Backend',
-    'stack.devops': 'DevOps',
-    'stack.databases': 'Bancos de Dados',
-    'stack.tools': 'Ferramentas',
-    'projects.eyebrow': 'Projetos',
-    'projects.title': 'Trabalhos recentes',
-    'projects.filter.all': 'Todos',
-    'projects.filter.frontend': 'Frontend',
-    'projects.filter.backend': 'Backend',
-    'projects.filter.devops': 'DevOps',
-    'projects.filter.fullstack': 'Full Stack',
-    'projects.github': 'GitHub',
-    'projects.demo': 'Demo',
-    'projects.nuv.description': 'Aplicação web para cálculo de estimativa de disco para o produto NUV da CDNTV Tecnologia. Foco em precisão e usabilidade.',
-    'projects.devsetup.description': 'Script de configuração de ambiente de desenvolvimento. Suporte completo para Windows, Linux e macOS com automação de instalação.',
-    'projects.portfolio.description': 'Portfólio pessoal com design premium, animações cinéticas e suporte a múltiplos idiomas. Construído com Next.js e Framer Motion.',
-    'contact.eyebrow': 'Contato',
-    'contact.title': 'Vamos construir algo incrível juntos.',
-    'contact.description': 'Disponível para projetos freelance, colaborações e oportunidades full-time. Respondo em até 24 horas.',
-    'contact.email': 'Enviar e-mail',
-    'contact.linkedin': 'LinkedIn',
-    'contact.github': 'GitHub',
-    'footer.rights': 'Fernando Augusto Haeser. Todos os direitos reservados.',
-    'footer.top': 'Topo',
+
+    // hero
+    'hero.greeting': 'Olá 👋 meu nome é',
+    'hero.tagline':
+      'Desenvolvedor Fullstack apaixonado por construir experiências digitais modernas, acessíveis e bem estruturadas.',
+    'hero.cta.email': 'Entrar em contato',
+    'hero.cta.linkedin': 'LinkedIn',
+    'hero.cta.github': 'GitHub',
+
+    // about — 01.
+    'about.num': '01.',
+    'about.section': 'Sobre',
+    'about.bio':
+      'Sou desenvolvedor fullstack com foco em criar produtos digitais de alta qualidade. Gosto de transformar requisitos complexos em interfaces funcionais e elegantes, priorizando performance, acessibilidade e código sustentável. Trabalho bem em times ágeis, com comunicação clara do protótipo à entrega.',
+    'about.work.label': 'Trabalho atual',
+    'about.work.company': 'CDNTV Tecnologia',
+    'about.work.role': 'Desenvolvedor Frontend',
+    'about.study.label': 'Estudando',
+    'about.study.institution': 'IFRS',
+    'about.study.program': 'Técnologo em Sistemas para Internet',
+    'about.tech.title': 'Tecnologias',
+
+    // stack
+    'stack.eyebrow': 'Stack',
+    'stack.title': 'Tecnologias e Ferramentas',
+    'stack.category.frontend': 'Frontend',
+    'stack.category.backend': 'Backend',
+    'stack.category.data': 'Dados',
+    'stack.category.devops': 'DevOps',
+    'stack.category.tools': 'Ferramentas',
+
+    // experience — 02.
+    'exp.num': '02.',
+    'exp.section': 'Experiência',
+    'exp.present': 'Atualidade',
+    'exp.cdntv.role': 'Desenvolvedor Frontend',
+    'exp.cdntv.desc':
+      'Desenvolvi a aplicação **NUV Calculator** para estimativa de uso de disco do produto NUV, utilizando **JavaScript**, **HTML5** e **CSS3** puros. Trabalhei em estreita colaboração com a equipe de produto na definição de requisitos, entregando uma interface precisa, responsiva e acessível.',
+    'exp.ifrs.role': 'Técnologo em Sistemas para Internet',
+    'exp.ifrs.end': '2028 (previsto)',
+    'exp.ifrs.desc':
+      'Cursando Tecnologia em **Sistemas para Internet** com ênfase em desenvolvimento web **full-stack**, **banco de dados** relacional e não-relacional, arquitetura de software, **redes de computadores** e engenharia de software ágil.',
+
+    // projects — 03.
+    'projects.num': '03.',
+    'projects.section': 'Projetos',
+    'projects.view': 'Ver Projeto',
+    'projects.repo': 'Ver Repositório',
+    'projects.all': 'Ver todos os projetos no GitHub →',
+    'projects.nuv.description':
+      'Aplicação web para cálculo de estimativa de uso de disco para o produto NUV da CDNTV Tecnologia. Foco em precisão e usabilidade.',
+    'projects.devsetup.description':
+      'Script de configuração de ambiente de desenvolvimento com suporte a Windows, Linux e macOS. Automatiza instalação de ferramentas e configurações.',
+    'projects.portfolio.description':
+      'Portfólio pessoal com design inspirado em referências modernas, animações suaves e suporte bilíngue PT-BR/EN. Construído com Next.js e Framer Motion.',
+
+    // contact
+    'contact.title': 'Vamos construir algo juntos?',
+    'contact.pitch':
+      'Estou aberto a projetos freelance, colaborações e oportunidades full-time. Respondo em até 24 horas.',
+    'contact.email': 'fernandohaeserr@gmail.com',
+    'contact.cta.email': 'Enviar e-mail',
+    'contact.cta.cv': 'Download CV',
+
+    // footer
+    'footer.rights': '© 2025 Fernando Haeser. Todos os direitos reservados.',
+    'footer.built': 'Desenvolvido com Next.js + Tailwind CSS',
   },
+
   en: {
+    // nav
     'nav.about': 'About',
-    'nav.stack': 'Stack',
+    'nav.experience': 'Experience',
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
-    'nav.lang': 'Language',
-    'hero.eyebrow': 'Software Engineer',
-    'hero.title': 'Fernando Haeser',
-    'hero.subtitle': 'Front-end & Back-end Developer',
-    'hero.lead': 'Building modern digital experiences with performance, creativity, and clean architecture.',
-    'hero.cta.projects': 'View Projects',
-    'hero.cta.contact': 'Contact Me',
-    'hero.status': 'Available for freelance',
-    'hero.location': 'Porto Alegre, Brazil',
-    'about.eyebrow': 'About me',
-    'about.title': 'I turn ideas into digital products with clarity and impact.',
-    'about.p1': 'I am a software engineer focused on modern, accessible, and well-structured experiences. I like turning requirements into functional interfaces, prioritizing performance and quality.',
-    'about.p2': 'I work well in agile teams and keep communication direct. I can go from prototype to final delivery, ensuring visual consistency and sustainable code.',
-    'about.stat.languages': 'Languages',
-    'about.stat.projects': 'Projects',
-    'about.stat.availability': 'Remote',
-    'about.education.title': 'Academic background',
-    'about.education.degree': 'Technologist in Internet Systems',
-    'about.education.institution': 'IFRS — Federal Institute of Rio Grande do Sul',
-    'about.education.period': '2025 – 2028',
-    'stack.eyebrow': 'Technologies',
-    'stack.title': 'My development stack',
-    'stack.frontend': 'Frontend',
-    'stack.backend': 'Backend',
-    'stack.devops': 'DevOps',
-    'stack.databases': 'Databases',
-    'stack.tools': 'Tools',
-    'projects.eyebrow': 'Projects',
-    'projects.title': 'Recent work',
-    'projects.filter.all': 'All',
-    'projects.filter.frontend': 'Frontend',
-    'projects.filter.backend': 'Backend',
-    'projects.filter.devops': 'DevOps',
-    'projects.filter.fullstack': 'Full Stack',
-    'projects.github': 'GitHub',
-    'projects.demo': 'Demo',
-    'projects.nuv.description': 'Web app for disk usage estimation for the NUV product at CDNTV Tecnologia. Focused on accuracy and usability.',
-    'projects.devsetup.description': 'Development environment setup script. Full support for Windows, Linux, and macOS with installation automation.',
-    'projects.portfolio.description': 'Personal portfolio with premium design, cinematic animations, and multi-language support. Built with Next.js and Framer Motion.',
-    'contact.eyebrow': 'Contact',
-    'contact.title': "Let's build something incredible together.",
-    'contact.description': 'Available for freelance projects, collaborations, and full-time opportunities. I reply within 24 hours.',
-    'contact.email': 'Send email',
-    'contact.linkedin': 'LinkedIn',
-    'contact.github': 'GitHub',
-    'footer.rights': 'Fernando Augusto Haeser. All rights reserved.',
-    'footer.top': 'Top',
-  },
-  es: {
-    'nav.about': 'Sobre mí',
-    'nav.stack': 'Stack',
-    'nav.projects': 'Proyectos',
-    'nav.contact': 'Contacto',
-    'nav.lang': 'Idioma',
-    'hero.eyebrow': 'Ingeniero de Software',
-    'hero.title': 'Fernando Haeser',
-    'hero.subtitle': 'Desarrollador Front-end & Back-end',
-    'hero.lead': 'Construyendo experiencias digitales modernas con rendimiento, creatividad y arquitectura limpia.',
-    'hero.cta.projects': 'Ver Proyectos',
-    'hero.cta.contact': 'Contacto',
-    'hero.status': 'Disponible para freelance',
-    'hero.location': 'Porto Alegre, Brasil',
-    'about.eyebrow': 'Sobre mí',
-    'about.title': 'Transformo ideas en productos digitales con claridad e impacto.',
-    'about.p1': 'Soy ingeniero de software enfocado en experiencias modernas, accesibles y bien estructuradas. Me gusta convertir requisitos en interfaces funcionales, priorizando rendimiento y calidad.',
-    'about.p2': 'Trabajo bien en equipos ágiles y mantengo comunicación directa. Puedo ir del prototipo a la entrega final, garantizando consistencia visual y código sostenible.',
-    'about.stat.languages': 'Lenguajes',
-    'about.stat.projects': 'Proyectos',
-    'about.stat.availability': 'Remoto',
-    'about.education.title': 'Formación académica',
-    'about.education.degree': 'Tecnólogo en Sistemas para Internet',
-    'about.education.institution': 'IFRS — Instituto Federal de Rio Grande do Sul',
-    'about.education.period': '2025 – 2028',
-    'stack.eyebrow': 'Tecnologías',
-    'stack.title': 'Mi stack de desarrollo',
-    'stack.frontend': 'Frontend',
-    'stack.backend': 'Backend',
-    'stack.devops': 'DevOps',
-    'stack.databases': 'Bases de Datos',
-    'stack.tools': 'Herramientas',
-    'projects.eyebrow': 'Proyectos',
-    'projects.title': 'Trabajos recientes',
-    'projects.filter.all': 'Todos',
-    'projects.filter.frontend': 'Frontend',
-    'projects.filter.backend': 'Backend',
-    'projects.filter.devops': 'DevOps',
-    'projects.filter.fullstack': 'Full Stack',
-    'projects.github': 'GitHub',
-    'projects.demo': 'Demo',
-    'projects.nuv.description': 'Aplicación web para estimación de uso de disco del producto NUV de CDNTV Tecnologia. Enfoque en precisión y usabilidad.',
-    'projects.devsetup.description': 'Script de configuración de entorno de desarrollo. Soporte completo para Windows, Linux y macOS con automatización de instalación.',
-    'projects.portfolio.description': 'Portafolio personal con diseño premium, animaciones cinemáticas y soporte multiidioma. Construido con Next.js y Framer Motion.',
-    'contact.eyebrow': 'Contacto',
-    'contact.title': 'Construyamos algo increíble juntos.',
-    'contact.description': 'Disponible para proyectos freelance, colaboraciones y oportunidades full-time. Respondo en hasta 24 horas.',
-    'contact.email': 'Enviar correo',
-    'contact.linkedin': 'LinkedIn',
-    'contact.github': 'GitHub',
-    'footer.rights': 'Fernando Augusto Haeser. Todos los derechos reservados.',
-    'footer.top': 'Inicio',
+
+    // hero
+    'hero.greeting': 'Hello 👋 my name is',
+    'hero.tagline':
+      'Fullstack Developer passionate about building modern, accessible, and well-structured digital experiences.',
+    'hero.cta.email': 'Get in touch',
+    'hero.cta.linkedin': 'LinkedIn',
+    'hero.cta.github': 'GitHub',
+
+    // about
+    'about.num': '01.',
+    'about.section': 'About',
+    'about.bio':
+      'I am a fullstack developer focused on building high-quality digital products. I enjoy turning complex requirements into functional and elegant interfaces, prioritizing performance, accessibility, and sustainable code. I work well in agile teams with clear communication, from prototype to final delivery.',
+    'about.work.label': 'Current work',
+    'about.work.company': 'CDNTV Tecnologia',
+    'about.work.role': 'Frontend Developer',
+    'about.study.label': 'Currently studying',
+    'about.study.institution': 'IFRS',
+    'about.study.program': 'Internet Systems Technology',
+    'about.tech.title': 'Technologies',
+
+    // stack
+    'stack.eyebrow': 'Stack',
+    'stack.title': 'Tech Stack',
+    'stack.category.frontend': 'Frontend',
+    'stack.category.backend': 'Backend',
+    'stack.category.data': 'Data',
+    'stack.category.devops': 'DevOps',
+    'stack.category.tools': 'Tools',
+
+    // experience
+    'exp.num': '02.',
+    'exp.section': 'Experience',
+    'exp.present': 'Present',
+    'exp.cdntv.role': 'Frontend Developer',
+    'exp.cdntv.desc':
+      'Developed the **NUV Calculator** application for disk usage estimation of the NUV product, using pure **JavaScript**, **HTML5**, and **CSS3**. Worked closely with the product team to define requirements, delivering a precise, responsive, and accessible interface.',
+    'exp.ifrs.role': 'Internet Systems Technology',
+    'exp.ifrs.end': '2028 (expected)',
+    'exp.ifrs.desc':
+      'Studying **Internet Systems Technology** with emphasis on full-stack **web development**, relational and non-relational **databases**, software architecture, **computer networking**, and agile software engineering.',
+
+    // projects
+    'projects.num': '03.',
+    'projects.section': 'Projects',
+    'projects.view': 'View Project',
+    'projects.repo': 'View Repository',
+    'projects.all': 'View all projects on GitHub →',
+    'projects.nuv.description':
+      'Web app for disk usage estimation for the NUV product at CDNTV Tecnologia. Focused on precision and usability.',
+    'projects.devsetup.description':
+      'Development environment setup script supporting Windows, Linux, and macOS. Automates tool installation and configuration.',
+    'projects.portfolio.description':
+      'Personal portfolio with a modern design, smooth animations, and bilingual PT-BR/EN support. Built with Next.js and Framer Motion.',
+
+    // contact
+    'contact.title': "Let's build something together?",
+    'contact.pitch':
+      "I'm open to freelance projects, collaborations, and full-time opportunities. I reply within 24 hours.",
+    'contact.email': 'fernandohaeserr@gmail.com',
+    'contact.cta.email': 'Send email',
+    'contact.cta.cv': 'Download CV',
+
+    // footer
+    'footer.rights': '© 2025 Fernando Haeser. All rights reserved.',
+    'footer.built': 'Built with Next.js + Tailwind CSS',
   },
 }
 
@@ -187,12 +177,13 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     const stored = localStorage.getItem('locale') as Locale | null
     if (stored && dict[stored]) {
       setLocaleState(stored)
+      document.documentElement.lang = stored
       return
     }
     const browser = navigator.language.toLowerCase()
-    if (browser.startsWith('pt')) setLocaleState('pt-BR')
-    else if (browser.startsWith('es')) setLocaleState('es')
-    else setLocaleState('en')
+    const detected: Locale = browser.startsWith('pt') ? 'pt-BR' : 'en'
+    setLocaleState(detected)
+    document.documentElement.lang = detected
   }, [])
 
   const setLocale = (next: Locale) => {
@@ -203,11 +194,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string) => dict[locale]?.[key] ?? key
 
-  return (
-    <I18nContext.Provider value={{ locale, t, setLocale }}>
-      {children}
-    </I18nContext.Provider>
-  )
+  return <I18nContext.Provider value={{ locale, t, setLocale }}>{children}</I18nContext.Provider>
 }
 
 export const useI18n = () => useContext(I18nContext)
