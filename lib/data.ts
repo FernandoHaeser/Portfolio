@@ -1,10 +1,10 @@
 export const personalInfo = {
-  name: 'Fernando Haeser',
-  email: 'fernandohaeserr@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/fehaeser',
-  github: 'https://github.com/FernandoHaeser',
-  location: 'Porto Alegre, Brasil',
-  cv: '/files/Fernando_Haeser_CV.pdf',
+  name: 'Alex Johnson',
+  email: 'alex@example.com',
+  linkedin: 'https://www.linkedin.com/in/alexjohnson',
+  github: 'https://github.com/alexjohnson',
+  location: 'San Francisco, USA',
+  cv: '/files/Alex_Johnson_CV.pdf',
 }
 
 // ─── Projects ───────────────────────────────────────────────────────────────
@@ -26,19 +26,21 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'NUV Calculator',
-    descriptionKey: 'projects.nuv.description',
-    tags: ['JavaScript', 'HTML5', 'CSS3', 'Web API'],
-    category: 'frontend',
+    title: 'E-Commerce Platform',
+    descriptionKey: 'projects.ecommerce.description',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+    category: 'fullstack',
+    github: 'https://github.com/alexjohnson/ecommerce-platform',
+    demo: 'https://ecommerce.example.com',
     featured: true,
   },
   {
     id: 2,
-    title: 'dev-setup',
-    descriptionKey: 'projects.devsetup.description',
-    tags: ['Shell', 'Linux', 'macOS', 'Windows', 'DevOps'],
-    category: 'devops',
-    github: 'https://github.com/FernandoHaeser/dev-setup',
+    title: 'Task Manager API',
+    descriptionKey: 'projects.taskapi.description',
+    tags: ['Node.js', 'TypeScript', 'MongoDB', 'REST API'],
+    category: 'backend',
+    github: 'https://github.com/alexjohnson/task-manager-api',
     featured: true,
   },
   {
@@ -47,7 +49,7 @@ export const projects: Project[] = [
     descriptionKey: 'projects.portfolio.description',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     category: 'frontend',
-    github: 'https://github.com/FernandoHaeser/Portfolio',
+    github: 'https://github.com/alexjohnson/portfolio',
     featured: true,
   },
 ]
@@ -70,23 +72,23 @@ export interface ExperienceEntry {
 export const experience: ExperienceEntry[] = [
   {
     id: 1,
-    company: 'CDNTV Tecnologia',
-    roleKey: 'exp.cdntv.role',
-    start: '2024',
+    company: 'Acme Corp',
+    roleKey: 'exp.acme.role',
+    start: '2023',
     endKey: 'exp.present',
-    descKey: 'exp.cdntv.desc',
+    descKey: 'exp.acme.desc',
     type: 'work',
-    location: 'Porto Alegre, RS',
+    location: 'San Francisco, CA',
   },
   {
     id: 2,
-    company: 'IFRS — Instituto Federal do Rio Grande do Sul',
-    roleKey: 'exp.ifrs.role',
-    start: '2025',
-    endKey: 'exp.ifrs.end',
-    descKey: 'exp.ifrs.desc',
+    company: 'State University',
+    roleKey: 'exp.university.role',
+    start: '2019',
+    endKey: 'exp.university.end',
+    descKey: 'exp.university.desc',
     type: 'education',
-    location: 'Porto Alegre, RS',
+    location: 'San Francisco, CA',
   },
 ]
 

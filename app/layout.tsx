@@ -19,22 +19,22 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Fernando Haeser — Sofware Engineer',
+  title: 'Alex Johnson — Software Engineer',
   description:
-    'Developer passionate about building modern, accessible, and well-structured digital experiences. Based in Porto Alegre, Brazil.',
-  authors: [{ name: 'Fernando Haeser' }],
-  keywords: ['developer', 'software engineer', 'react', 'next.js', 'typescript', 'porto alegre'],
+    'Developer passionate about building modern, accessible, and well-structured digital experiences. Based in San Francisco, USA.',
+  authors: [{ name: 'Alex Johnson' }],
+  keywords: ['developer', 'software engineer', 'react', 'next.js', 'typescript', 'san francisco'],
   themeColor: '#FF8A1F',
   openGraph: {
     type: 'website',
-    locale: 'pt_BR',
-    title: 'Fernando Haeser — Software Engineer',
+    locale: 'en_US',
+    title: 'Alex Johnson — Software Engineer',
     description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
-    siteName: 'Fernando Haeser',
+    siteName: 'Alex Johnson',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fernando Haeser — Software Engineer',
+    title: 'Alex Johnson — Software Engineer',
     description: 'Building modern digital experiences with performance, creativity, and clean architecture.',
   },
   robots: { index: true, follow: true },

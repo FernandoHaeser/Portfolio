@@ -31,7 +31,7 @@ export function Hero() {
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/40 ring-4 ring-primary/10">
               <Image
                 src="/profile.png"
-                alt="Fernando Haeser"
+                alt={personalInfo.name}
                 width={64}
                 height={64}
                 className="w-full h-full object-cover"
@@ -50,9 +50,9 @@ export function Hero() {
             variants={item}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
           >
-            Fernando
+            {personalInfo.name.split(' ')[0]}
             <br />
-            <span className="text-primary">Haeser</span>
+            <span className="text-primary">{personalInfo.name.split(' ').slice(1).join(' ')}</span>
           </motion.h1>
 
           {/* Tagline */}
